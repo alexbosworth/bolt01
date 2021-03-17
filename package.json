@@ -1,0 +1,33 @@
+{
+  "author": {
+    "name": "Alex Bosworth",
+    "url": "https://twitter.com/alexbosworth"
+  },
+  "bugs": {
+    "url": "https://github.com/alexbosworth/bolt01/issues"
+  },
+  "dependencies": {
+    "bn.js": "5.2.0"
+  },
+  "description": "Lightning Network BOLT-01 methods",
+  "devDependencies": {
+    "tap": "14.11.0"
+  },
+  "engines": {
+    "node": ">=10.10.0"
+  },
+  "keywords": [
+    "lightning-network"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "bolt01",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexbosworth/bolt01.git"
+  },
+  "scripts": {
+    "test": "tap -t 120 test/big_size/*.js"
+  },
+  "version": "1.0.0"
+}
