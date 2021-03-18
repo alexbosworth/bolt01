@@ -29,5 +29,5 @@
   "scripts": {
     "test": "tap -t 120 test/big_size/*.js"
   },
-  "version": "1.0.0"
+  "version": "1.1.0"
 }
