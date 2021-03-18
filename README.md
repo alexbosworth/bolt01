@@ -2,7 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/bolt01.svg)](https://badge.fury.io/js/bolt01)
 
-Methods relating to Lightning Network BOLT 01.
+Methods relating to Lightning Network
+[BOLT 01](https://github.com/lightningnetwork/lightning-rfc/blob/master/01-messaging.md).
 
 ## decodeBigSize
 
@@ -52,5 +53,5 @@ Example:
 const {encodeBigSize} = require('bolt01');
 
 // Encode a zero value BigSize number
-const {encoded} = decodeBigSize({number '0'});
+const {encoded} = decodeBigSize({number: '0'});
 ```
