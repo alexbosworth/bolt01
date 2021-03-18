@@ -18,6 +18,7 @@ Given BOLT 01 "BigSize" bytes, return a corresponding numeric value
     @returns
     {
       decoded: <Decoded Number String>
+      length: <Encoding Byte Length Number>
     }
 
 Example:
@@ -27,4 +28,29 @@ const {decodeBigSize} = require('bolt01');
 
 // Decode a zero value BigSize number
 const {decoded} = decodeBigSize({encoded: '00'});
+```
+
+## encodeBigSize
+
+Given a numeric value, encode it as BOLT 01 "BigSize" bytes
+
+    {
+      number: <Number String>
+    }
+
+    @throws
+    <Error>
+
+    @returns
+    {
+      encoded: <BigSize Encoded Value Hex String>
+    }
+
+Example:
+
+```node
+const {encodeBigSize} = require('bolt01');
+
+// Encode a zero value BigSize number
+const {encoded} = decodeBigSize({number '0'});
 ```

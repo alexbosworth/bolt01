@@ -8,6 +8,7 @@ const max32BitNumber = 0xffffffff;
 const readUint16 = n => new BN(n.slice(1, 3)).toString();
 const readUint32 = n => new BN(n.slice(1, 5)).toString();
 const readUint64 = n => new BN(n.slice(1, 9)).toString();
+const uint8Length = 1;
 const uint16 = 0xfd;
 const uint16Length = 3;
 const uint32 = 0xfe;
@@ -26,6 +27,7 @@ const uint64Length = 9;
   @returns
   {
     decoded: <Decoded Number String>
+    length: <Encoding Byte Length Number>
   }
 */
 module.exports = ({encoded}) => {
@@ -39,7 +41,7 @@ module.exports = ({encoded}) => {
 
   // Exit early when the number is within the 1 byte range
   if (size <= max8BitNumber) {
-    return {decoded: size.toString()};
+    return {decoded: size.toString(), length: uint8Length};
   }
 
   const byteLength = bytes.length;
@@ -58,7 +60,7 @@ module.exports = ({encoded}) => {
       throw new Error('ExpectedLargerNumberToDecodeUint16BigSize');
     }
 
-    return {decoded: uint16Number};
+    return {decoded: uint16Number, length: uint16Length};
 
   case uint32:
     // Exit with error when there aren't enough bytes for a uint32
@@ -73,7 +75,7 @@ module.exports = ({encoded}) => {
       throw new Error('ExpectedLargerNumberToDecodeUint32BigSize');
     }
 
-    return {decoded: uint32Number};
+    return {decoded: uint32Number, length: uint32Length};
 
   // The only remaining possibility for the size is 0xff indicating uint64
   default:
@@ -89,6 +91,6 @@ module.exports = ({encoded}) => {
       throw new Error('ExpectedLargerNumberToDecodeUint64BigSize');
     }
 
-    return {decoded: uint64Number};
+    return {decoded: uint64Number, length: uint64Length};
   }
 };
