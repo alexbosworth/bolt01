@@ -31,11 +31,11 @@ const tests = [
 ];
 
 tests.forEach(({args, description, error, expected}) => {
-  return test(description, ({deepIs, end, throws}) => {
+  return test(description, ({end, strictSame, throws}) => {
     if (!!error) {
       throws(() => encodeTlvStream(args), new Error(error), 'Got error');
     } else {
-      deepIs(encodeTlvStream(args), expected, 'Got expected result');
+      strictSame(encodeTlvStream(args), expected, 'Got expected result');
     }
 
     return end();
