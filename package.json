@@ -11,7 +11,7 @@
   },
   "description": "Lightning Network BOLT-01 methods",
   "devDependencies": {
-    "tap": "15.0.2"
+    "tap": "15.0.9"
   },
   "engines": {
     "node": ">=10.10.0"
@@ -29,5 +29,5 @@
   "scripts": {
     "test": "tap -t 120 test/arrays/*.js test/big_size/*.js test/tlv_record/*.js test/tlv_stream/*.js"
   },
-  "version": "1.2.1"
+  "version": "1.2.2"
 }
