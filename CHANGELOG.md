@@ -1,6 +1,6 @@
 # Versions
 
-## 1.2.1
+## 1.2.2
 
 - `decodeTlvRecord`: Decode a TLV record into a record
 - `decodeTlvStream`: Decode a TLV stream into component records
