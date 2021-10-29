@@ -29,5 +29,5 @@
   "scripts": {
     "test": "tap -t 120 test/arrays/*.js test/big_size/*.js test/tlv_record/*.js test/tlv_stream/*.js"
   },
-  "version": "1.2.2"
+  "version": "1.2.3"
 }
