@@ -109,7 +109,7 @@ Example:
 const {encodeBigSize} = require('bolt01');
 
 // Encode a zero value BigSize number
-const {encoded} = decodeBigSize({number: '0'});
+const {encoded} = encodeBigSize({number: '0'});
 ```
 
 ## encodeTlvRecord
