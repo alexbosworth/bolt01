@@ -7,7 +7,7 @@
     "url": "https://github.com/alexbosworth/bolt01/issues"
   },
   "dependencies": {
-    "bn.js": "5.2.0"
+    "bn.js": "5.2.1"
   },
   "description": "Lightning Network BOLT-01 methods",
   "devDependencies": {
@@ -29,5 +29,5 @@
   "scripts": {
     "test": "tap -t 120 test/arrays/*.js test/big_size/*.js test/tlv_record/*.js test/tlv_stream/*.js"
   },
-  "version": "1.2.4"
+  "version": "1.2.5"
 }
