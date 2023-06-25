@@ -1,4 +1,6 @@
-const {test} = require('@alexbosworth/tap');
+const {deepStrictEqual} = require('node:assert').strict;
+const test = require('node:test');
+const {throws} = require('node:assert').strict;
 
 const {encodeBigSize} = require('./../../');
 
@@ -51,13 +53,13 @@ const tests = [
 ];
 
 tests.forEach(({args, description, error, expected}) => {
-  return test(description, ({end, equal, throws}) => {
+  return test(description, (t, end) => {
     if (!!error) {
       throws(() => encodeBigSize(args), new Error(error), 'Got error');
     } else {
       const {encoded} = encodeBigSize(args);
 
-      equal(encoded, expected.encoded, 'Got expected result');
+      deepStrictEqual(encoded, expected.encoded, 'Got expected result');
     }
 
     return end();

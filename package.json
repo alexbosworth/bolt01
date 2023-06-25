@@ -10,11 +10,8 @@
     "bn.js": "5.2.1"
   },
   "description": "Lightning Network BOLT-01 methods",
-  "devDependencies": {
-    "@alexbosworth/tap": "15.0.12"
-  },
   "engines": {
-    "node": ">=12.20.0"
+    "node": ">=16"
   },
   "keywords": [
     "lightning-network"
@@ -27,7 +24,7 @@
     "url": "https://github.com/alexbosworth/bolt01.git"
   },
   "scripts": {
-    "test": "tap -t 120 test/arrays/*.js test/big_size/*.js test/tlv_record/*.js test/tlv_stream/*.js"
+    "test": "npx nyc@15.1.0 node --experimental-test-coverage --test test/arrays/*.js test/big_size/*.js test/tlv_record/*.js test/tlv_stream/*.js"
   },
-  "version": "1.2.6"
+  "version": "2.0.0"
 }

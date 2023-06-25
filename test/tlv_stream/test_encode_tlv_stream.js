@@ -1,4 +1,6 @@
-const {test} = require('@alexbosworth/tap');
+const {deepStrictEqual} = require('node:assert').strict;
+const test = require('node:test');
+const {throws} = require('node:assert').strict;
 
 const {encodeTlvStream} = require('./../../');
 
@@ -31,11 +33,11 @@ const tests = [
 ];
 
 tests.forEach(({args, description, error, expected}) => {
-  return test(description, ({end, strictSame, throws}) => {
+  return test(description, (t, end) => {
     if (!!error) {
       throws(() => encodeTlvStream(args), new Error(error), 'Got error');
     } else {
-      strictSame(encodeTlvStream(args), expected, 'Got expected result');
+      deepStrictEqual(encodeTlvStream(args), expected, 'Got expected result');
     }
 
     return end();

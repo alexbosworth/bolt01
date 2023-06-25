@@ -1,7 +1,6 @@
-const {isArray} = Array;
-
 const equalTo = 0;
 const greaterThan = 1;
+const {isArray} = Array;
 const lessThan = -1;
 
 /** Sort array by BigInt castable attribute, lowest to highest

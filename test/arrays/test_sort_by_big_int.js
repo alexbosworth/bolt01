@@ -1,4 +1,6 @@
-const {test} = require('@alexbosworth/tap');
+const {deepStrictEqual} = require('node:assert').strict;
+const test = require('node:test');
+const {throws} = require('node:assert').strict;
 
 const {sortByBigInt} = require('./../../arrays');
 
@@ -11,7 +13,7 @@ const tests = [
   {
     args: {array: []},
     description: 'An attribute to sort by is required',
-    error: 'ExpectedAttributeToSortArrayBy',
+    error: 'ExpectedAttributeToSortArrayByBigInt',
   },
   {
     args: {array: [{foo: 1}, {foo: 2}, {foo: 3}], attribute: 'foo'},
@@ -31,13 +33,13 @@ const tests = [
 ];
 
 tests.forEach(({args, description, error, expected}) => {
-  return test(description, ({end, strictSame, throws}) => {
+  return test(description, (t, end) => {
     if (!!error) {
       throws(() => sortByBigInt(args), new Error(error), 'Got expected error');
     } else {
       const {sorted} = sortByBigInt(args);
 
-      strictSame(sorted, expected.sorted, 'Array is sorted as expected');
+      deepStrictEqual(sorted, expected.sorted, 'Array is sorted as expected');
     }
 
     return end();

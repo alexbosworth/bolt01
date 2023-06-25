@@ -1,5 +1,9 @@
 # Versions
 
+## 2.0.0
+
+- Node version 16 or higher is required
+
 ## 1.2.6
 
 - `decodeTlvRecord`: Decode a TLV record into a record

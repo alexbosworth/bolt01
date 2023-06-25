@@ -1,12 +1,12 @@
 const BN = require('bn.js');
 
+const max8BitNumber = BigInt(0xfc);
+const max16BitNumber = BigInt(0xffff);
+const max32BitNumber = BigInt(0xffffffff);
 const tagAsUint8 = n => new BN(n).toString(16, 2);
 const tagAsUint16 = n => `fd${new BN(n).toString(16, 4)}`;
 const tagAsUint32 = n => `fe${new BN(n).toString(16, 8)}`;
 const tagAsUint64 = n => `ff${new BN(n).toString(16, 16)}`;
-const max8BitNumber = BigInt(0xfc);
-const max16BitNumber = BigInt(0xffff);
-const max32BitNumber = BigInt(0xffffffff);
 
 /** Given a numeric value, encode it as BOLT 01 "BigSize" bytes
 
