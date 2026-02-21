@@ -1,5 +1,9 @@
 # Versions
 
+## 3.0.0
+
+- Node version 20 or higher is required
+
 ## 2.0.0
 
 - Node version 16 or higher is required
